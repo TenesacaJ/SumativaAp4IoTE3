@@ -57,9 +57,8 @@ export class HomePage {
   }
 
   async sendPokemonTypeToFirestore(pokemonType: string) {
-    // Agrega el tipo del Pokémon a Firestore
-    this.ruta = doc(this.db, 'Pokedex', 'Pokemon');
-    await setDoc(this.ruta, { tipoPokemon: pokemonType }); // Cambia el atributo de la tabla
+    const pokemonRef = doc(this.db, "Pokedex", "Pokemon");
+    await setDoc(pokemonRef, { Tipo: pokemonType });
     console.log("Tipo de Pokémon enviado a Firestore correctamente.");
-  }
+  }  
 }
